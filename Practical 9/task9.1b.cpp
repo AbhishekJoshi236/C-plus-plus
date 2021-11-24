@@ -1,23 +1,39 @@
-#include <iostream>
+#include<iostream>
+#include<string.h>
 using namespace std;
-class Student{
-public:
-    string name;
-    int age;
-    int year;
-    string address;
-    static int c;
-    void setA(string a){
-        c++;
-    }
+class Student
+{
+    public:
+      char name[10],section;
+      int age,Year,marks;
+      void assign(char *c,int m,char s)
+      { 
+            strcpy(name,c);
+            marks=m;
+            section=s;
+      }
+    
+      int get()
+      { 
+          return marks;
+      }
 };
-int Student::c=0;
+
 int main()
 {
-    Student s[9];
-    for(int i=0;i<9;i++){
-        s[i].setA("ayush");
-    }
-    cout<<"Total number of student in college: "<<Student::c<<endl;
+    char c[10],t;
+    int m;
+     Student s[5];
+     for(int i=0;i<5;i++)
+     {
+       cout<<"Enter the Name,Marks,Section of student: "<<i+1<<endl;
+       cin>>c>>m>>t;
+        s[i].assign(c,m,t);
+     }
+    
+    for(int i=0;i<5;i++)
+     {
+           cout<<"Marks of student- "<<i+1<<":"<<s[i].get()<<endl;
+     }
     return 0;
 }
