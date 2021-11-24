@@ -1,37 +1,19 @@
 #include<iostream>
 using namespace std;
-class Person{
+class Details{
 public:
-    string name;
-    string ad;
-    long long tn;
-    long long mn;
-    string head;
-    void print(int i){
-        cout<<endl;
-        cout<<"Name of "<<i<<" person: "<<name<<endl;
-        cout<<"Address of "<<i<<" person: "<<ad<<endl;
-        cout<<"Telephone number of "<<i<<" person: "<<tn<<endl;
-        cout<<"Mobile number of "<<i<<" person: "<<mn<<endl;
-        cout<<"Head of family of "<<i<<" person: "<<head<<endl;
-        cout<<endl;
-    }
+  string name,ad,head;
+  long long tn,mn;
+  void print(int i)
+  { cout<<i<<" "<<name<<"  "<<ad<<"    "<<tn<<"   "<<mn<<"  "<<head<<endl; }
 };
-int main(){
-    Person s[2];
-    for(int i=0;i<2;i++){
-        cout<<"Enter the name of "<<i+1<<" person : ";
-        cin>>s[i].name;
-        cout<<"Enter the address of "<<i+1<<" person: ";
-        cin>>s[i].ad;
-        cout<<"Enter the telephone number of "<<i+1<<" person: ";
-        cin>>s[i].tn;
-        cout<<"Enter the mobile number of "<<i+1<<" person: ";
-        cin>>s[i].mn;
-        cout<<"Enter the head of family of "<<i+1<<" person: ";
-        cin>>s[i].head;
-    }
-    for(int i=0;i<2;i++){
-        s[i].print(i+1);
-    }
+int main()
+{ Details s[2];
+  for(int i=0;i<2;i++)
+  {cout<<"Enter the name,address,telephone no.,mobile no.,Head of the family of person "<<i+1<<":"<<endl;
+    cin>>s[i].name>>s[i].ad>>s[i].tn>>s[i].mn>>s[i].head; }
+ cout<<"\n  Name\t  Address   Telephone no.  Mobile no.\tHead of the Family\n";
+ for(int i=0;i<2;i++)
+    s[i].print(i+1);
+  return 0;
 }
