@@ -1,29 +1,24 @@
 #include<iostream>
 using namespace std;
-class Person{
-    string name;
-    char ad;
-    long long mn;
+class Student{
+    string name,sec;
+    int rn;
 public:
     void setA(int i){
-        cout<<"Enter the name of "<<i+1<<" person : ";
-        cin>>this->name;
-        cout<<"Enter the Section of "<<i+1<<" person: ";
-        cin>>this->ad;
-        cout<<"Enter the mobile number of "<<i+1<<" person: ";
-        cin>>this->mn;
+        cout<<"Enter the Name,Section,Roll no. Student-"<<i+1<<":\n";
+        cin>>this->name>>this->sec>>this->rn;
     }
-    void print(int i){
-        cout<<endl;
-        cout<<"Name of "<<i<<" person: "<<name<<endl;
-        cout<<"Section of "<<i<<" person: "<<ad<<endl;
-        cout<<"Mobile number of "<<i<<" person: "<<mn<<endl;
+    void print(int i)
+    {   cout<<"\n Details of student-"<<i<<endl;
+        cout<<"Name :"<<name<<endl;
+        cout<<"Section :"<<sec<<endl;
+        cout<<"Roll no.:"<<rn<<endl;
         cout<<endl;
     }
 };
 int main(){
-    Person s1,s2;
-    Person *p1=&s1,*p2=&s2;
+    Student s1,s2;
+    Student *p1=&s1,*p2=&s2;
     p1->setA(0);
     p2->setA(1);
     p1->print(1);
