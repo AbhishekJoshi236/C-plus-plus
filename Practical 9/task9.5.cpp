@@ -1,32 +1,36 @@
 #include<iostream>
-using namespace std;
-class College{
-    int ns;
-    string cname;
-public:
-    struct Student{
-        string sname;
-        char sec;
-        int rn;
-    }s1;
-    College(int n,string s){
-        ns=n;
-        cname=s;
+using namespace std; 
+
+struct student           //Structure has by default public mode as access modifier
+{ 
+    string sname;        //it is stored in stack
+    char sec;           //it takes small part of memory than class
+    int rn;
+}s1;
+
+class College
+{
+    string cname;       //Class has by default private mode but it also has 2 other access specifier
+    public:
+    College(string s)    //it is stored in Heap
+    {  
+        cname=s;            //it takes a large part of heap
     }
-    void print(){
-        cout<<"Details of college:"<<endl;
-        cout<<"Name of college: "<<cname<<endl;
-        cout<<"Number of students: "<<ns<<endl<<endl;
-        cout<<"Details of student:"<<endl;
-        cout<<"Name of student: "<<s1.sname<<endl;
-        cout<<"Section of student: "<<s1.sec<<endl;
-        cout<<"Roll number of student: "<<s1.rn<<endl;
+    void print(struct student s)
+    {
+        cout<<"Details of student"<<endl;
+        cout<<"Name : "<<s.sname<<endl;
+        cout<<"Roll no.: "<<s.rn<<endl;
+        cout<<"Section: "<<s.sec<<endl;
+        cout<<"College: "<<cname<<endl;
     }
 };
-int main(){
-    College c1(2300,"GEHU");
-    c1.s1.sname="Abhishek";
-    c1.s1.sec='B';
-    c1.s1.rn=3;
-    c1.print();
+
+int main()
+{
+    s1.sname="Bony";
+    s1.sec='C';
+    s1.rn=1;
+    College c1("GEHU");
+    c1.print(s1);
 }
