@@ -1,32 +1,33 @@
-#include <iostream>
+#include<iostream>
+#include<string.h>
 using namespace std;
-
-//TASK 9.1
-class Student{
-    int n;
-    long long pn;
-    string address;
-public:
-    void Assign(int a,long long b,string s){
-        n=a;
-        pn=b;
-        address=s;
-    }
+class Student
+{  
+    string name,address;
+    int rollno;
+    long long phno;
     
-    void print(string s){
-        cout<<"Details of "<<s<<endl;
-        cout<<"Roll number: "<<n<<endl;
-        cout<<"Phone number: "<<pn<<endl;
-        cout<<"Address : "<<address<<endl;
+    public:
+    void assign(string n,int r,long long ph,string ad)
+    { 
+        name=n;
+        rollno=r;
+        phno=ph;
+        address=ad;
+    }
+    void print()
+    {  
+        cout<<name<<" \t "<<rollno<<"\t\t"<<phno<<"\t"<<address<<endl;
     }
 };
+
 int main()
-{
-    Student s,j;
-    s.Assign(3,6772697489,"Delhi");
-    j.Assign(7,9463749509,"Dehradun");
-    s.print("Sam");
-    cout<<endl;
-    j.print("John");
-    return 0;
+{ 
+    Student t,s;
+    t.assign("Sam",1,7986456676,"Dehradun");
+    s.assign("John",2,8947575485,"Shimla");
+    cout<<"Name\tRoll No.\tPhone no.\tAddress"<<endl;
+    t.print();
+    s.print();
+     return 0;
 }
