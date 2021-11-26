@@ -9,7 +9,7 @@ cin>>n;
 if(n==1 || n==0)
 cout<<"Not a prime number.";
 else{
-for(int i=2;i<n/2;i++)
+for(int i=2;i<=n/2;i++)
 {
 	if(n%i==0)
 	{
