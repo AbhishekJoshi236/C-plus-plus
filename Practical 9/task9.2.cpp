@@ -1,22 +1,35 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Area
+class area
 {
-public:
-      void area(int l,int b)
-      {
-       cout<<"Area of rectangle: "<<l*b<<endl;
-      }
-     void area(int a)
-     {
-       cout<<"Area of square: "<<a*a<<endl;
-      }
-};
+    public:
+        int l,b,s;
+    
 
+        area(int x)             
+        {
+            s=x;
+        }
+        area (int x,int y)      
+        {
+            l=x,b=y;
+        }
+        
+        void area_cal(int s)       
+        {
+            cout<<"Area of Square is: "<<s*s<<endl;
+        }
+
+        void area_cal(int l,int b)       
+        {
+            cout<<"Area of Rectangle is: "<<l*b;
+        }
+};
 int main()
-{  
-    Area r;
-    r.area(9,7);
-    r.area(5);
+{
+    area sq(8),re(2,3);
+    sq.area_cal(sq.s);
+    re.area_cal(re.l,re.b);
+    return 0;
 }
