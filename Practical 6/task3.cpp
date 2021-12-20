@@ -1,16 +1,19 @@
 #include<iostream>
 #include<algorithm>
 using namespace std;
+
 int main()
-{
-	string a="DHONI";
-	reverse(a.begin(),a.end());
-	cout<<"using reverse function: "<<a<<endl;
+{ 
+  string s="moodle",b="ubuntu";
+  cout<<"Reversing using reverse method"<<endl;
+  reverse(s.begin(),s.end());
+  cout<<s<<endl;
+  cout<<"Reversing using reverse_iterator"<<endl;
+  string::reverse_iterator i=b.rbegin();
+  for(;i!=b.rend();i++)
+     cout<<*i;
+  cout<<endl;
 	
-	string b="SACHIN";
-	cout<<"Manually reversing\n";
-	for(int i=b.size()-1;i>=0;i--)
-	 cout<<b[i];
-	cout<<"\n";
-return 0;
+  return 0;
 }
+  
