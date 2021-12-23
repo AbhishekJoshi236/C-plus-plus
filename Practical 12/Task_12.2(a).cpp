@@ -9,7 +9,7 @@ Constructor Execution -> From Base class to Derived Class.
 class A
 {
     public:
-    A()                                             // Secondly calling class B constructor
+    A()                                             // Secondly calling class A constructor
     {
         cout<<"\n Class A Constructor execution....\n\n";
     }
