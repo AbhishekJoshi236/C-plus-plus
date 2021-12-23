@@ -26,7 +26,7 @@ class blue_whale: public mammals, public marine_animals
     public:
     void print_both()
     {
-        cout<<"I belongs to both ht==the categories: Mammals as well as Marine Animals.  \n";
+        cout<<"I belongs to both the categories: Mammals as well as Marine Animals.  \n";
     }
 };
 
