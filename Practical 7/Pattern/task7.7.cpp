@@ -1,23 +1,24 @@
 #include<iostream>
 using namespace std;
-
 int main()
-{
-	int count =0,c;
-	for(int i=5;i>0;i--)
-	{
-		++count;
-		for(int j=1;j<i;j++)
-			cout<<" ";
-			
-		c=count;
-		while(c!=0)
-		{
-			cout<<"*";
-			c--;
-		}
-		cout<<"\n";
-	}
-
+{ 
+  char a[4][4];
+  cout<<"Pattern Matrix:\n";
+	
+  for(int i=0;i<4;i++)
+    for(int j=0;j<4;j++)
+       { 
+	    if((i+j)>=3)
+             a[j][i]='*';
+            else
+             a[j][i]=' ';
+       }
+	
+    for(int i=0;i<4;i++)
+    {   
+	    for(int j=0;j<4;j++)
+            cout<<a[i][j];
+      cout<<endl;
+    }
 return 0;
 }
