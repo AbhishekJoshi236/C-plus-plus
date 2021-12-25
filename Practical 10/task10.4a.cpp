@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 class complex
@@ -17,14 +16,18 @@ class complex
             cout<<a<<" is smallest.\n";
         }
         
-        int operator<(complex c)        
-        {
-            if(a<(c.a))
-                return 1;
-            else
-                return 0;
-        }
+        friend int operator<(complex , complex);        
+        
 };
+
+int operator<(complex c1, complex c2)
+{
+    if((c1.a)<(c2.a))
+        return 1;
+    else
+        return 0;
+}
+
 int main()
 {
     complex c1,c2,c3;
