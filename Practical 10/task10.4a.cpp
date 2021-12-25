@@ -1,23 +1,38 @@
-#include<iostream>
-#include<cmath>
+
+#include <iostream>
 using namespace std;
-class Number{
+class complex
+{
+    private:
+        int a;
+    
     public:
-        int n;
-        Number(int m){
-            this->n=m;
+        void setdata(int x)
+        {
+            a=x;
         }
-        friend int operator < (Number &, Number &);
+        
+        void display()
+        {
+            cout<<a<<" is smallest.\n";
+        }
+        
+        int operator<(complex c)        
+        {
+            if(a<(c.a))
+                return 1;
+            else
+                return 0;
+        }
 };
-int operator < (Number &c1,Number &c2){
-    return pow(c1.n,c2.n);
-}
-int main(){
-    cout<<"Operator Overloading:"<<endl;
-    cout<<"Converting '<' into power function."<<endl<<endl;
-    Number n1(2),n2(5);
-    Number n3=n1<n2;
-    cout<<n1.n<<" to the power "<<n2.n<<" is: "<<n3.n<<endl;
-    Number n4=n2<n1;
-    cout<<n2.n<<" to the power "<<n1.n<<" is: "<<n4.n<<endl;
+int main()
+{
+    complex c1,c2,c3;
+    c1.setdata(10);
+    c2.setdata(5);
+    if(c1<c2)
+        c1.display();
+    else
+        c2.display();
+    return 0;
 }
