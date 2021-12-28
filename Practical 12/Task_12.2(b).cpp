@@ -6,7 +6,7 @@ Destructor Calling -> From Derived class to Base Class.
 Destructor Execution -> From Derived class to Base Class.
 */
 
-class A                                                         // Secondly calling class A Destructor
+class A                                                         // Thirdly calling class A Destructor
 {
     public:
     ~A()
@@ -15,18 +15,29 @@ class A                                                         // Secondly call
     }
 
 };
+
 class B: public A
 {
     public:
-    ~B()                                                        // Firstly calling class B Destructor
+    ~B()                                                        // Secondly calling class B Destructor
     {
         cout<<"\n Class B Desturctor execution....\n\n"; 
     }
 
 };
 
+class C: public B
+{
+    public:
+    ~C()                                                        // Firstly calling class B Destructor
+    {
+        cout<<"\n Class C Desturctor execution....\n\n"; 
+    }
+
+};
+
 int main()
 {
-    B obj;
+    C obj;
     return 0;
 }
