@@ -15,6 +15,6 @@ int main()
 }
 
 /*
-Reason for OUTPUT --> Since there is no catch block for catching 'char' value thrown by thrown by 'throw' keyword so catch(...) block
+Reason for OUTPUT --> Since there is no catch block for catching instance of 'char' thrown by 'throw' keyword so, catch(...) block
 will execute and handle the program accordingly.
 */  
